@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <title>L-System Viewer</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="shortcut icon" href="favicon.png">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+      <script src="lsys.js"></script>
+   </head>
+   <body>
+      <div id="right" class="border">
+         <h1>L-System Viewer</h1>
+         <p>This tool allows you to view L-systems built using the <a href="ide.html" target="_blank">L-system IDE.</a><br>If you don't see the picture, scroll down. More details available in the<br>IDE. Programmed by <a href="https://zenzicubic.tk" target="_blank">Zenzicubic</a>. Source available on <a href="" target="_blank">GitHub.</a></p>
+         <p>Iterations: <span id="iterations">5</span></p>
+         <input type="range" min="1" max="15" value="5" id="iterSlider"><br><br>
+         <h2>Presets</h2>
+         <select id="presets">
+            <option value="0">Y-sticks</option>
+            <option value="1">Branches</option>
+            <option value="2">Windblown bushes</option>
+            <option value="3">Angular tree</option>
+            <option value="4">Asparagus fern</option>
+            <option value="5">Juniper</option>
+         </select>
+         <br>
+         <h2>Info about this L-system:</h2>
+
+         <p>Axiom: <span id="axiom"></span></p>
+         <p>Angle (&theta;): <span id="angle"></span></p>
+         <p>Branch length: <span id="len"></span></p>
+         <p>Rules:</p>
+         <div id="rules"></div>
+      </div>
+      <canvas id="canvas" width="1000" height="1000">
+   </body>
