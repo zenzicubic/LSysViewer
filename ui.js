@@ -2,6 +2,7 @@ let symbols = [];
 let rules = {};
 let angle = 20;
 let length = 4;
+let scale = 1;
 
 let selRule;
 let axiom = "F";
@@ -90,7 +91,7 @@ function isLetter(c) {
 
 function isRule(r) {
 	// check for extraneous characters in a rule or axiom
-	return /[a-zA-Z+-\[\]]+$/.test(r);
+	return /[a-zA-Z+-\[\]\>\<]+$/.test(r);
 }
 
 function symbolsExist(r) {
@@ -146,8 +147,13 @@ function updateSliders() {
 	});
 
 	$("#len").change(function() {
-		length = parseInt($(this).val());
+		length = parseInt($(this).val()) / 2;
 		$("#lenLabel").html(length);
+	});
+
+	$("#scale").change(function() {
+		scale = parseInt($(this).val()) / 100;
+		$("#scaleLabel").html(scale);
 	});
 }
 
@@ -197,6 +203,7 @@ function view() {
 		let jsonState = {
 			angle: angle,
 			len: length,
+			scale: scale,
 			axiom: axiom,
 			rules: rules
 		};

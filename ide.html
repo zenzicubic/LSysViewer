@@ -20,6 +20,8 @@
                <li>F: Move forward n steps.</li>
                <li>[: Push the current state onto the stack.</li>
                <li>]: Pop the most recent state from the stack and navigate to it.</li>
+               <li>&gt;: Multiply step length by the scaling factor.</li>
+               <li>&lt;: Divide step length by the scaling factor.</li>
             </ul>
             <p>Any number of arbitrary flow-control symbols may also be used.<br>
             <b>NOTE:</b> This page just <i>helps design</i> the L-systems, the viewer is a separate page.</p>
@@ -64,9 +66,11 @@
 
          <h2>Other Parameters</h2>
          <p>Turtle Step Length: <span id="lenLabel">4</span></p>
-         <input type="range" min="1" max="20" id="len" value="4"><br>
+         <input type="range" min="1" max="40" id="len" value="8"><br>
          <p>Angle (&theta;): <span id="thetaLabel">20</span>&deg;</p>
          <input type="range" min="1" max="360" id="theta" value="20">
+         <p>Scaling factor: <span id="scaleLabel">1.0</span></p>
+         <input type="range" min="10" max="200" id="scale" value="100">
          <p>Axiom: <span id="axiomSpan">F</span></p>
          <input type="text" id="axiomBox" placeholder="Axiom..."><br>
          <p id="axiomStatus"></p>

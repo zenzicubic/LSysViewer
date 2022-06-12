@@ -8,13 +8,13 @@ let stack = [];
 let json;
 let iter = 5;
 let presets = [
-	{"angle":26,"len":4,"axiom":"Y","rules":{"X":"X[-FFF][+FFF]FX","Y":"YFX[+Y][-Y]"}},
-	{"angle":20,"len":3,"axiom":"X","rules":{"X":"F-[[X]+X]+F[+FX]-X","F":"FF"}},
-	{"angle":35,"len":4,"axiom":"F","rules":{"F":"FF+[+F-F-F]-[-F+F+F]"}},
-	{"angle":45,"len":3,"axiom":"F","rules":{"F":"F[+FF][-FF]F[-F][+F]F"}},
-	{"angle":20,"len":7,"axiom":"VZFFF","rules":{"V":"[+++W][---W]YV","W":"+X[-W]Z","X":"-W[+X]Z","Y":"YZ","Z":"[-FFF][+FFF]F"}},
-	{"angle":20,"len":4,"axiom":"X","rules":{"X":"F[-X+F]F[+X-X]","F":"XF"}},
-	{"angle":23,"len":4,"axiom":"F","rules":{"X":"+FY","Y":"-FX","F":"FF-[XY]+[XY]"}}
+	{"angle":26,"len":4,"scale":1,"axiom":"Y","rules":{"X":"X[-FFF][+FFF]FX","Y":"YFX[+Y][-Y]"}},
+	{"angle":20,"len":3,"scale":1,"axiom":"X","rules":{"X":"F-[[X]+X]+F[+FX]-X","F":"FF"}},
+	{"angle":35,"len":4,"scale":1,"axiom":"F","rules":{"F":"FF+[+F-F-F]-[-F+F+F]"}},
+	{"angle":45,"len":3,"scale":1,"axiom":"F","rules":{"F":"F[+FF][-FF]F[-F][+F]F"}},
+	{"angle":20,"len":7,"scale":1,"axiom":"VZFFF","rules":{"V":"[+++W][---W]YV","W":"+X[-W]Z","X":"-W[+X]Z","Y":"YZ","Z":"[-FFF][+FFF]F"}},
+	{"angle":20,"len":4,"scale":1,"axiom":"X","rules":{"X":"F[-X+F]F[+X-X]","F":"XF"}},
+	{"angle":23,"len":4,"scale":1,"axiom":"F","rules":{"X":"+FY","Y":"-FX","F":"FF-[XY]+[XY]"}}
 ];
 
 $(document).ready(function(){
@@ -67,16 +67,17 @@ function fillDetails() {
 	$("#rules").html(ruleHTML.join("\n"));
 	$("#axiom").html(json.axiom);
 	$("#angle").html(json.angle);
+	$("#fac").html(json.scale);
 	$("#len").html(json.len);
 }
 
 function paint() {
 	ctx.strokeStyle = "#5FC25A";
 	ctx.resetTransform();
-	drawLsys(json.angle, json.len, json.axiom, json.rules, iter);
+	drawLsys(json.angle, json.len, json.scale, json.axiom, json.rules, iter);
 }
 
-function drawLsys(theta, length, axiom, rules, iter) {
+function drawLsys(theta, length, fac, axiom, rules, iter) {
 	// generate the sentence
 	ctx.clearRect(0, 0, width, height);
 	let s = axiom;
@@ -106,6 +107,10 @@ function drawLsys(theta, length, axiom, rules, iter) {
 			ctx.stroke();
 			ctx.restore();
 			ctx.beginPath();
+		} else if (c == ">") {
+			length *= fac;
+		} else if (c == "<") {
+			length /= fac;
 		}
 	}
 	ctx.stroke();
