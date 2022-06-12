@@ -1,21 +1,21 @@
 p, h1, h2, h3, h4, h5, li, a, label, th, td {
   font-family: Arial;
-  color: #2c363f;
+  color: #37393a;
 }
 
 body {
-  background-color: #f2f5ea;
+  background-color: #ffe6e8;
 }
 
 hr {
-  border: 1px solid #2c363f;
-  background-color: #2c363f;
+  border: 1px solid #37393a;
+  background-color: #37393a;
 }
 
 button, input[type=submit] {
-  background-color: #DD8B9E; 
+  background-color: #e78f8e; 
   border: none;
-  color: #2c363f;
+  color: #37393a;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -25,7 +25,7 @@ button, input[type=submit] {
 }
 
 button:hover, input[type=submit]:hover {
-  background-color: #e75a7c;
+  background-color: #f48498;
 }
 
 table, th, td {
@@ -41,11 +41,11 @@ table, th, td {
 }
 
 #menu {
-  border: 1px dashed #2c363f;
+  border: 1px dashed #37393a;
   position: absolute;
   top: 0%;
   right: 0%;
-  background: #f2f5ea;
+  background: #ffe6e8;
 }
 
 @font-face {
@@ -73,6 +73,6 @@ table, th, td {
 }
 
 .border {
-  border: 1px dashed #2c363f;
+  border: 1px dashed #37393a;
   display: inline-block;
 }

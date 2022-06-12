@@ -8,7 +8,7 @@ let stack = [];
 let json;
 let iter = 5;
 let presets = [
-	{"angle":26,"len":5,"axiom":"Y","rules":{"X":"X[-FFF][+FFF]FX","Y":"YFX[+Y][-Y]"}},
+	{"angle":26,"len":4,"axiom":"Y","rules":{"X":"X[-FFF][+FFF]FX","Y":"YFX[+Y][-Y]"}},
 	{"angle":20,"len":3,"axiom":"X","rules":{"X":"F-[[X]+X]+F[+FX]-X","F":"FF"}},
 	{"angle":35,"len":4,"axiom":"F","rules":{"F":"FF+[+F-F-F]-[-F+F+F]"}},
 	{"angle":45,"len":3,"axiom":"F","rules":{"F":"F[+FF][-FF]F[-F][+F]F"}},
@@ -70,7 +70,7 @@ function fillDetails() {
 }
 
 function paint() {
-	ctx.strokeStyle = "#639684";
+	ctx.strokeStyle = "#5FC25A";
 	ctx.resetTransform();
 	drawLsys(json.angle, json.len, json.axiom, json.rules, iter);
 }
