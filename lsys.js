@@ -13,7 +13,8 @@ let presets = [
 	{"angle":35,"len":4,"axiom":"F","rules":{"F":"FF+[+F-F-F]-[-F+F+F]"}},
 	{"angle":45,"len":3,"axiom":"F","rules":{"F":"F[+FF][-FF]F[-F][+F]F"}},
 	{"angle":20,"len":7,"axiom":"VZFFF","rules":{"V":"[+++W][---W]YV","W":"+X[-W]Z","X":"-W[+X]Z","Y":"YZ","Z":"[-FFF][+FFF]F"}},
-	{"angle":20,"len":4,"axiom":"X","rules":{"X":"F[-X+F]F[+X-X]","F":"XF"}}
+	{"angle":20,"len":4,"axiom":"X","rules":{"X":"F[-X+F]F[+X-X]","F":"XF"}},
+	{"angle":23,"len":4,"axiom":"F","rules":{"X":"+FY","Y":"-FX","F":"FF-[XY]+[XY]"}}
 ];
 
 $(document).ready(function(){
